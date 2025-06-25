@@ -1,0 +1,651 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Skip to main content link for accessibility */
+.skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    z-index: 10000;
+    border-radius: 4px;
+    font-weight: 600;
+    transition: top 0.3s ease;
+}
+
+.skip-to-main:focus {
+    top: 6px;
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+/* Visually hidden content for screen readers */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    line-height: 1.6;
+    padding-bottom: 100px; /* Space for sticky footer */
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-align: center;
+    letter-spacing: -1px;
+}
+
+.date-display, .time-display {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #555;
+    min-width: 150px;
+    padding: 10px 15px;
+    background: rgba(102, 126, 234, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.date-display {
+    text-align: left;
+}
+
+.time-display {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+/* Cards Grid */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* App Cards */
+.app-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    border-radius: 20px 20px 0 0;
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    border-color: rgba(102, 126, 234, 0.4);
+}
+
+.card-icon {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.card-description {
+    color: #666;
+    font-size: 1.1em;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.card-button {
+    display: block;
+    width: 100%;
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.card-button:hover {
+    background: linear-gradient(45deg, #5a6fd8, #6a42a0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.card-button:active {
+    transform: translateY(0);
+}
+
+/* Footer */
+.footer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.footer-content p {
+    color: #666;
+    font-weight: 600;
+}
+
+.footer-subtitle {
+    font-size: 0.9em;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.app-card {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.app-card:nth-child(1) { animation-delay: 0.1s; }
+.app-card:nth-child(2) { animation-delay: 0.2s; }
+.app-card:nth-child(3) { animation-delay: 0.3s; }
+.app-card:nth-child(4) { animation-delay: 0.4s; }
+.app-card:nth-child(5) { animation-delay: 0.5s; }
+.app-card:nth-child(6) { animation-delay: 0.6s; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 15px;
+    }
+    
+    .main-title {
+        font-size: 2em;
+        order: -1;
+    }
+    
+    .date-display, .time-display {
+        font-size: 1em;
+        min-width: 120px;
+        padding: 8px 12px;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .app-card {
+        padding: 25px 20px;
+    }
+    
+    .card-icon {
+        font-size: 2.5em;
+    }
+    
+    .card-title {
+        font-size: 1.3em;
+    }
+    
+    .card-description {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-content {
+        padding: 15px 10px;
+    }
+    
+    .main-title {
+        font-size: 1.8em;
+    }
+    
+    .date-display, .time-display {
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+    
+    .container {
+        padding: 0 10px;
+    }
+    
+    .app-card {
+        padding: 20px 15px;
+    }
+    
+    .card-button {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+/* Focus and Accessibility */
+.card-button:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.8);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.2);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .app-card {
+        border: 2px solid #000;
+        background: #fff;
+    }
+    
+    .card-button {
+        background: #000;
+        border: 2px solid #000;
+    }
+    
+    .main-title {
+        color: #000;
+        -webkit-text-fill-color: #000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .app-card:hover {
+        transform: none;
+    }
+    
+    .card-button:hover {
+        transform: none;
+    }
+}
+
+/* Focus-visible for better keyboard navigation */
+.card-button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 6px rgba(102, 126, 234, 0.5);
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+    .card-button {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+}
+
+/* Large text support */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 320px) {
+    .header-content {
+        padding: 10px 5px;
+    }
+    
+    .main-title {
+        font-size: 1.5em;
+    }
+    
+    .date-display, .time-display {
+        font-size: 0.8em;
+        min-width: 100px;
+        padding: 4px 8px;
+    }
+    
+    .container {
+        padding: 0 5px;
+    }
+    
+    .app-card {
+        padding: 15px 10px;
+    }
+    
+    .card-title {
+        font-size: 1.2em;
+    }
+    
+    .card-description {
+        font-size: 0.9em;
+    }
+    
+    .card-button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Loading state */
+.app-card {
+    opacity: 0;
+}
+
+/* Drag and Drop Styles */
+.drag-handle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.4em;
+    color: rgba(102, 126, 234, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    cursor: grab;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    user-select: none;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+.drag-handle:hover {
+    color: rgba(102, 126, 234, 0.8);
+    background: rgba(102, 126, 234, 0.1);
+}
+
+.app-card:active .drag-handle {
+    cursor: grabbing;
+}
+
+.app-card.dragging {
+    opacity: 0.7;
+    transform: rotate(3deg) scale(1.05);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    pointer-events: none;
+    filter: brightness(1.1);
+    border: 2px solid rgba(102, 126, 234, 0.6);
+    transition: none;
+}
+
+.app-card.drag-over {
+    border-color: rgba(102, 126, 234, 0.8);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.4), 0 8px 25px rgba(102, 126, 234, 0.3);
+    transform: scale(1.03);
+    background: rgba(102, 126, 234, 0.05);
+    position: relative;
+}
+
+.app-card.drag-over::after {
+    content: 'Drop here to swap positions';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(102, 126, 234, 0.9);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    pointer-events: none;
+    z-index: 20;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: dragOverPulse 1.5s infinite;
+}
+
+@keyframes dragOverPulse {
+    0%, 100% { opacity: 0.9; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+}
+
+.card-placeholder {
+    background: linear-gradient(45deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border: 3px dashed rgba(102, 126, 234, 0.5);
+    border-radius: 20px;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    animation: placeholderGlow 2s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-placeholder::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #667eea, #764ba2, #667eea);
+    background-size: 200% 200%;
+    border-radius: 20px;
+    z-index: -1;
+    animation: placeholderBorder 3s linear infinite;
+}
+
+@keyframes placeholderGlow {
+    0%, 100% { 
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        transform: scale(1);
+    }
+    50% { 
+        box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+        transform: scale(1.01);
+    }
+}
+
+@keyframes placeholderBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.placeholder-content {
+    color: rgba(102, 126, 234, 0.8);
+    font-weight: 700;
+    font-size: 1.2em;
+    text-align: center;
+    pointer-events: none;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.placeholder-content::before {
+    content: '↔️';
+    font-size: 1.5em;
+    animation: placeholderIcon 2s infinite;
+}
+
+@keyframes placeholderIcon {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    75% { transform: scale(1.1) rotate(5deg); }
+}
+
+/* Touch device improvements */
+@media (pointer: coarse) {
+    .drag-handle {
+        font-size: 1.4em;
+        padding: 8px;
+        top: 8px;
+        right: 8px;
+    }
+    
+    .app-card {
+        cursor: grab;
+    }
+    
+    .app-card:active {
+        cursor: grabbing;
+    }
+}
+
+/* Reduced motion for drag states */
+@media (prefers-reduced-motion: reduce) {
+    .app-card.dragging {
+        transform: none;
+        opacity: 0.7;
+    }
+    
+    .app-card.drag-over {
+        transform: none;
+    }
+    
+    .card-placeholder {
+        transition: none;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .header, .footer {
+        background: white;
+        box-shadow: none;
+    }
+    
+    .app-card {
+        background: white;
+        border: 1px solid #ccc;
+        box-shadow: none;
+        break-inside: avoid;
+    }
+    
+    .card-button {
+        background: #667eea;
+        color: white;
+    }
+}
+

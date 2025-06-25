@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joe's Life - Personal Dashboard and Application Hub for managing fasting, budget, shopping, status monitoring, and vehicle maintenance">
+    <meta name="keywords" content="personal dashboard, fasting tracker, budget tracker, shopping list, status dashboard, vehicle maintenance">
+    <meta name="author" content="Joe">
+    <title>Joe's Life - Personal Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="date-display" id="dateDisplay" role="text" aria-label="Current date" aria-live="polite"></div>
+            <h1 class="main-title">Joe's Life</h1>
+            <div class="time-display" id="timeDisplay" role="text" aria-label="Current time" aria-live="polite"></div>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <section class="dashboard-section" aria-labelledby="dashboard-heading">
+                <h2 id="dashboard-heading" class="visually-hidden">Personal Applications Dashboard</h2>
+                <div class="cards-grid" role="list" aria-label="Available applications">
+                    
+                    <!-- Fasting Tracker Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Food and dining icon">🍽️</div>
+                        <h3 class="card-title">Fasting Tracker</h3>
+                        <p class="card-description">Track your intermittent fasting schedule and progress</p>
+                        <a href="../fasting/index.html" class="card-button" aria-describedby="fasting-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="fasting-desc">Navigate to </span>Open Fasting Tracker
+                        </a>
+                    </article>
+
+                    <!-- Budget Tracker Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Money and finance icon">💰</div>
+                        <h3 class="card-title">Budget Tracker</h3>
+                        <p class="card-description">Manage your personal finances with professional charts</p>
+                        <a href="../budgetTracker/budget-tracker.html" class="card-button" aria-describedby="budget-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="budget-desc">Navigate to </span>Open Budget Tracker
+                        </a>
+                    </article>
+
+                    <!-- Shopping List Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Shopping cart icon">🛒</div>
+                        <h3 class="card-title">Shopping List</h3>
+                        <p class="card-description">Organize and manage your shopping lists efficiently</p>
+                        <a href="../shoppingList/index.html" class="card-button" aria-describedby="shopping-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="shopping-desc">Navigate to </span>Open Shopping List
+                        </a>
+                    </article>
+
+                    <!-- Status Dashboard Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Chart and analytics icon">📊</div>
+                        <h3 class="card-title">Status Dashboard</h3>
+                        <p class="card-description">Monitor system status and key metrics</p>
+                        <a href="../status dashboard/index.html" class="card-button" aria-describedby="status-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="status-desc">Navigate to </span>Open Status Dashboard
+                        </a>
+                    </article>
+
+                    <!-- VW Beetle Tracker Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Car and vehicle icon">🚗</div>
+                        <h3 class="card-title">VW Beetle Tracker</h3>
+                        <p class="card-description">Track maintenance and records for your Volkswagen Beetle</p>
+                        <a href="../vw-beetle-tracker/index.html" class="card-button" aria-describedby="beetle-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="beetle-desc">Navigate to </span>Open VW Beetle Tracker
+                        </a>
+                    </article>
+
+                    <!-- JobTracker Pro Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Briefcase and career icon">💼</div>
+                        <h3 class="card-title">JobTracker Pro</h3>
+                        <p class="card-description">Search, track, and manage your job applications and career journey</p>
+                        <a href="../jobSearch/index.html" class="card-button" aria-describedby="job-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="job-desc">Navigate to </span>Open JobTracker Pro
+                        </a>
+                    </article>
+
+                    <!-- Chore Manager Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Cleaning and home maintenance icon">🧹</div>
+                        <h3 class="card-title">Chore Manager</h3>
+                        <p class="card-description">Organize household chores and maintenance for your 950 sq ft condo</p>
+                        <a href="../chores/index.html" class="card-button" aria-describedby="chore-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="chore-desc">Navigate to </span>Open Chore Manager
+                        </a>
+                    </article>
+
+                    <!-- Work Order System Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Work order and maintenance icon">🔧</div>
+                        <h3 class="card-title">Work Order System</h3>
+                        <p class="card-description">Manage home maintenance work orders, contractors, and track project status</p>
+                        <a href="../workorder/index.html" class="card-button" aria-describedby="workorder-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="workorder-desc">Navigate to </span>Open Work Order System
+                        </a>
+                    </article>
+
+                    <!-- Mind Map Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Mind map and brainstorming icon">🧠</div>
+                        <h3 class="card-title">Mind Map Creator</h3>
+                        <p class="card-description">Create and organize your thoughts with an interactive mind mapping tool</p>
+                        <a href="../mindmap/index.html" class="card-button" aria-describedby="mindmap-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="mindmap-desc">Navigate to </span>Open Mind Map Creator
+                        </a>
+                    </article>
+
+                    <!-- Quick Links Card -->
+                    <article class="app-card" role="listitem" draggable="true">
+                        <div class="drag-handle" aria-label="Drag to reorder" role="button" tabindex="0">⋮⋮</div>
+                        <div class="card-icon" role="img" aria-label="Link and bookmark icon">🔗</div>
+                        <h3 class="card-title">Quick Links</h3>
+                        <p class="card-description">Manage and organize your favorite websites and resources with quick access</p>
+                        <a href="../quick-links/index.html" class="card-button" aria-describedby="links-desc" target="_blank" rel="noopener">
+                            <span class="visually-hidden" id="links-desc">Navigate to </span>Open Quick Links
+                        </a>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>Joe's Life Dashboard - <span aria-label="Version 1.0.0">Version 1.0.0</span></p>
+            <p class="footer-subtitle">Personal Application Hub</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

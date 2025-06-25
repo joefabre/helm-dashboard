@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Joe's Life Dashboard - Aggregated information from all your personal applications">
+    <meta name="keywords" content="personal dashboard, fasting tracker, budget tracker, vehicle maintenance, job tracker">
+    <meta name="author" content="Joe">
+    <title>Joe's Life - Dashboard Overview</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+    <!-- Skip to main content link for screen readers -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+    
+    <header class="header" role="banner">
+        <div class="header-content">
+            <div class="date-display" id="dateDisplay" role="text" aria-label="Current date" aria-live="polite"></div>
+            <h1 class="main-title">Joe's Dashboard</h1>
+            <div class="time-display" id="timeDisplay" role="text" aria-label="Current time" aria-live="polite"></div>
+        </div>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="dashboard.html" class="nav-link active">Dashboard</a>
+        </div>
+    </header>
+
+    <main class="main-content" id="main-content" role="main">
+        <div class="container">
+            <section class="dashboard-section" aria-labelledby="dashboard-heading">
+                <h2 id="dashboard-heading">Live Data Dashboard</h2>
+                <p class="dashboard-description">Real-time data from all your applications in one place</p>
+                
+                <div class="status-bar">
+                    <div class="status-indicator">
+                        <span class="status-dot active"></span>
+                        <span class="status-text">Live Data</span>
+                    </div>
+                    <div class="refresh-info">
+                        Auto-refreshes every <span id="refresh-countdown">60</span> seconds
+                    </div>
+                    <button id="refresh-now" class="refresh-button">Refresh Now</button>
+                </div>
+
+                <div class="cards-grid" role="list" aria-label="Application data cards">
+                    
+                    <!-- Fasting Tracker Card -->
+                    <article class="data-card" role="listitem" id="fasting-card">
+                        <div class="card-header">
+                            <div class="card-icon" role="img" aria-label="Food and dining icon">🍽️</div>
+                            <h3 class="card-title">Fasting Tracker</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="data-stat">
+                                <span class="stat-label">Success Rate</span>
+                                <span class="stat-value" id="fasting-success-rate">--</span>
+                            </div>
+                            <div class="data-stat">
+                                <span class="stat-label">Successful Fasts</span>
+                                <span class="stat-value" id="successful-fasts">--</span>
+                            </div>
+                            <div class="data-stat">
+                                <span class="stat-label">Total Miles</span>
+                                <span class="stat-value" id="total-miles">--</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="../fasting/index.html" class="card-link" target="_blank" rel="noopener">
+                                Open Fasting Tracker
+                            </a>
+                            <span class="last-updated" id="fasting-last-updated">Never updated</span>
+                        </div>
+                    </article>
+
+                    <!-- Budget Tracker Card -->
+                    <article class="data-card" role="listitem" id="budget-card">
+                        <div class="card-header">
+                            <div class="card-icon" role="img" aria-label="Money and finance icon">💰</div>
+                            <h3 class="card-title">Budget Tracker</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="data-stat">
+                                <span class="stat-label">Savings Rate</span>
+                                <span class="stat-value" id="savings-rate">--</span>
+                            </div>
+                            <div class="data-stat">
+                                <span class="stat-label">Net Balance</span>
+                                <span class="stat-value" id="net-balance">--</span>
+                            </div>
+                            <div class="data-stat">
+                                <span class="stat-label">Total Income</span>
+                                <span class="stat-value" id="total-income">--</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="../budgetTracker/budget-tracker.html" class="card-link" target="_blank" rel="noopener">
+                                Open Budget Tracker
+                            </a>
+                            <span class="last-updated" id="budget-last-updated">Never updated</span>
+                        </div>
+                    </article>
+
+                    <!-- Chore Manager Card -->
+                    <article class="data-card" role="listitem" id="chores-card">
+                        <div class="card-header">
+                            <div class="card-icon" role="img" aria-label="Cleaning and home maintenance icon">🧹</div>
+                            <h3 class="card-title">Today's Chores</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul class="chores-list" id="today-chores-list">
+                                <li class="no-data-message">No chores for today</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="../chores/index.html" class="card-link" target="_blank" rel="noopener">
+                                Open Chore Manager
+                            </a>
+                            <span class="last-updated" id="chores-last-updated">Never updated</span>
+                        </div>
+                    </article>
+
+                    <!-- VW Beetle Tracker Card -->
+                    <article class="data-card" role="listitem" id="beetle-card">
+                        <div class="card-header">
+                            <div class="card-icon" role="img" aria-label="Car and vehicle icon">🚗</div>
+                            <h3 class="card-title">VW Beetle Service</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="service-alert" id="service-alert-container">
+                                <div class="no-data-message">No service alerts</div>
+                            </div>
+                            <div class="service-summary">
+                                <div class="service-item" id="service-oil">
+                                    <span class="service-name">Oil Change:</span>
+                                    <span class="service-status">Unknown</span>
+                                </div>
+                                <div class="service-item" id="service-tune">
+                                    <span class="service-name">Tune-Up:</span>
+                                    <span class="service-status">Unknown</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="../vw-beetle-tracker/index.html" class="card-link" target="_blank" rel="noopener">
+                                Open VW Beetle Tracker
+                            </a>
+                            <span class="last-updated" id="beetle-last-updated">Never updated</span>
+                        </div>
+                    </article>
+
+                    <!-- Job Tracker Card -->
+                    <article class="data-card" role="listitem" id="job-card">
+                        <div class="card-header">
+                            <div class="card-icon" role="img" aria-label="Briefcase and career icon">💼</div>
+                            <h3 class="card-title">Job Interviews</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="interview-summary">
+                                <div class="data-stat">
+                                    <span class="stat-label">Upcoming Interviews</span>
+                                    <span class="stat-value" id="upcoming-interviews">--</span>
+                                </div>
+                            </div>
+                            <div class="interview-list" id="interview-list-container">
+                                <div class="no-data-message">No upcoming interviews</div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <a href="../jobSearch/index.html" class="card-link" target="_blank" rel="noopener">
+                                Open JobTracker Pro
+                            </a>
+                            <span class="last-updated" id="job-last-updated">Never updated</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <p>Joe's Life Dashboard - <span aria-label="Version 1.0.0">Version 1.0.0</span></p>
+            <p class="footer-subtitle">Data last refreshed: <span id="last-refresh-time">Never</span></p>
+        </div>
+    </footer>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
